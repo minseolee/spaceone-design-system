@@ -174,7 +174,7 @@
     "resolve-url-loader": "^3.1.0",
     "sass": "^1.49.11",
     "sass-loader": "^10.2.0",
-    "semantic-release": "^17.4.3",
+    "semantic-release": "^19.0.3",
     "storybook-addon-designs": "^6.2.0",
     "style-loader": "^1.0.0",
     "stylelint": "^13.2.1",
