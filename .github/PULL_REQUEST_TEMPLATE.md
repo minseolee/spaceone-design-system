@@ -9,6 +9,6 @@
 - [ ] Others (performance improvement, refactoring, CI/CD, etc.)
 
 
-## Description
+## Description 
 
 ## Things to Talk About
