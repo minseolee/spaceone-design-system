@@ -258,10 +258,10 @@ export const getButtonModalArgTypes = (): ArgTypes => ({
             type: 'boolean',
         },
     },
-    position: {
-        name: 'position',
+    absolute: {
+        name: 'absolute',
         type: { name: 'number' },
-        description: 'set position by absolute, with [{top: {position}rem}, {left: {position}rem}]',
+        description: 'set position by absolute, with [{top: {absolute}rem}, {left: {absolute}rem}]',
         defaultValue: 0,
         table: {
             type: {

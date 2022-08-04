@@ -2,8 +2,8 @@
     <section class="p-button-modal">
         <transition v-if="visible" name="modal">
             <div class="modal-mask"
-                 :class="[{'no-backdrop':!backdrop}, {'position': position}]"
-                 :style="position ? [{'top': `${position}rem`}, {'left': `${position}rem`}] : {}"
+                 :class="[{'no-backdrop':!backdrop}, {'absolute': !!absolute}]"
+                 :style="absolute ? [{'top': `${absolute}rem`}, {'left': `${absolute}rem`}] : {}"
             >
                 <div class="modal-wrapper" :class="dialogClassObject"
                      role="dialog"
@@ -119,7 +119,7 @@ export default defineComponent<ButtonModalProps>({
             type: Boolean,
             default: true,
         },
-        position: {
+        absolute: {
             type: Number,
             default: undefined,
         },
@@ -348,7 +348,7 @@ export default defineComponent<ButtonModalProps>({
 
 @screen mobile {
     .modal-mask {
-        &.position {
+        &.absolute {
             left: 0.75rem !important;
         }
     }
