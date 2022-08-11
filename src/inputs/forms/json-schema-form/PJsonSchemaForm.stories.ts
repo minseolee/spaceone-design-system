@@ -1,6 +1,6 @@
 import {
     toRefs, reactive,
-} from '@vue/composition-api';
+} from 'vue';
 
 import PButton from '@/inputs/buttons/button/PButton.vue';
 import PJsonSchemaForm from '@/inputs/forms/json-schema-form/PJsonSchemaForm.vue';

@@ -151,10 +151,10 @@
 </template>
 
 <script lang="ts">
-import type { ComponentRenderProxy } from '@vue/composition-api';
 import {
     toRefs, computed, reactive, watch, getCurrentInstance, defineComponent,
-} from '@vue/composition-api';
+} from 'vue';
+import type { Vue } from 'vue/types/vue';
 
 import { get, range } from 'lodash';
 
@@ -279,7 +279,7 @@ export default defineComponent<DataTableProps>({
         },
     },
     setup(props, context) {
-        const vm = getCurrentInstance()?.proxy as ComponentRenderProxy;
+        const vm = getCurrentInstance()?.proxy as Vue;
 
         const getChildFields = (field: DataTableFieldType): DataTableFieldType[]|undefined => field.children?.map(child => ({ sortable: true, ...child }));
 

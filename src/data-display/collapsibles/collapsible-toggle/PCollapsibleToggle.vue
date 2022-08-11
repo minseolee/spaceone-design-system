@@ -21,10 +21,9 @@
 </template>
 
 <script lang="ts">
-import type { ComponentRenderProxy } from '@vue/composition-api';
 import {
     defineComponent, reactive, toRefs, getCurrentInstance,
-} from '@vue/composition-api';
+} from 'vue';
 
 import type { CollapsibleToggleProps } from '@/data-display/collapsibles/collapsible-toggle/type';
 import {
@@ -56,7 +55,7 @@ export default defineComponent<CollapsibleToggleProps>({
         },
     },
     setup(props: CollapsibleToggleProps) {
-        const vm = getCurrentInstance()?.proxy as ComponentRenderProxy;
+        const vm = getCurrentInstance()?.proxy as Vue;
         const state = reactive({
             proxyIsCollapsed: makeOptionalProxy('isCollapsed', vm, props.isCollapsed),
         });

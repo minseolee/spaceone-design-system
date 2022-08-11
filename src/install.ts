@@ -1,4 +1,3 @@
-import VueCompositionApi from '@vue/composition-api';
 import type { PluginFunction, VueConstructor } from 'vue';
 
 import VTooltip from 'v-tooltip';
@@ -43,7 +42,6 @@ export class SpaceDSInstaller {
         const options = SpaceDSInstaller._options;
         if (options?.installVueRouter) vueConstructor.use(VueRouter);
         if (options?.installVueI18n) vueConstructor.use(VueI18n);
-        if (options?.installVueCompositionApi) vueConstructor.use(VueCompositionApi);
         if (options?.installFragment) vueConstructor.use(Fragment.Plugin);
         vueConstructor.use(Notifications, { velocity });
         vueConstructor.use(SvgIcon, {

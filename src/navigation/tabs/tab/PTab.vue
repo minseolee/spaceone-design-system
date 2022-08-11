@@ -26,7 +26,7 @@
 <script lang="ts">
 import {
     computed, defineComponent,
-} from '@vue/composition-api';
+} from 'vue';
 
 import { useTab } from '@/hooks/tab';
 import type { TabItem, TabProps } from '@/navigation/tabs/tab/type';

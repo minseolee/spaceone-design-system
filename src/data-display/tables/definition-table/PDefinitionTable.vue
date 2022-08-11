@@ -57,7 +57,7 @@
 <script lang="ts">
 import {
     computed, defineComponent, reactive, toRefs, watch,
-} from '@vue/composition-api';
+} from 'vue';
 
 import { every, range, get } from 'lodash';
 

@@ -4,7 +4,7 @@
 </template>
 
 <script lang="ts">
-import { computed } from '@vue/composition-api';
+import { computed } from 'vue';
 
 import DOMPurify from 'dompurify';
 import { render } from 'ejs';

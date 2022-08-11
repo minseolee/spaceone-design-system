@@ -1,41 +1,69 @@
 <template>
     <section class="p-button-modal">
-        <transition v-if="visible" name="modal">
-            <div class="modal-mask"
-                 :class="[{'no-backdrop':!backdrop}, {'absolute': !!absolute}]"
-                 :style="absolute ? [{'top': `${absolute}rem`}, {'left': `${absolute}rem`}] : {}"
+        <transition
+            v-if="visible"
+            name="modal"
+        >
+            <div
+                class="modal-mask"
+                :class="[{'no-backdrop':!backdrop}, {'absolute': !!absolute}]"
+                :style="absolute ? [{'top': `${absolute}rem`}, {'left': `${absolute}rem`}] : {}"
             >
-                <div class="modal-wrapper" :class="dialogClassObject"
-                     role="dialog"
-                     aria-modal="true"
-                     aria-labelledby="headerTitle"
-                     tabindex="1"
+                <div
+                    class="modal-wrapper"
+                    :class="dialogClassObject"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="headerTitle"
+                    tabindex="1"
                 >
-                    <article class="modal-content" :class="[`modal-${themeColor}`, {'no-footer': hideFooter}]">
+                    <article
+                        class="modal-content"
+                        :class="[`modal-${themeColor}`, {'no-footer': hideFooter}]"
+                    >
                         <h3 class="header">
-                            <slot v-if="!hideHeader" name="header">
+                            <slot
+                                v-if="!hideHeader"
+                                name="header"
+                            >
                                 <div class="modal-header">
                                     <span class="alert-icon">
-                                        <p-lottie name="lottie_error" auto :size="1.5"
-                                                  :class="[`modal-${themeColor}`]" class="header-lottie"
+                                        <p-lottie
+                                            name="lottie_error"
+                                            auto
+                                            :size="1.5"
+                                            :class="[`modal-${themeColor}`]"
+                                            class="header-lottie"
                                         />
                                     </span>
                                     <span>{{ headerTitle }}</span>
                                 </div>
                             </slot>
-                            <p-icon-button v-if="!hideHeaderCloseButton"
-                                           name="ic_delete" color="inherit"
-                                           class="close-button"
-                                           :class="[{disabled: loading},
-                                                    {'no-footer': hideFooter}]"
-                                           @click.stop="onCloseClick"
+                            <p-icon-button
+                                v-if="!hideHeaderCloseButton"
+                                name="ic_delete"
+                                color="inherit"
+                                class="close-button"
+                                :class="[{disabled: loading},
+                                         {'no-footer': hideFooter}]"
+                                @click.stop="onCloseClick"
                             />
                         </h3>
-                        <div v-if="!hideBody" class="modal-body" :class="allBodyClass">
+                        <div
+                            v-if="!hideBody"
+                            class="modal-body"
+                            :class="allBodyClass"
+                        >
                             <slot name="body" />
                         </div>
-                        <div v-if="!hideFooter" class="modal-footer">
-                            <slot :slot-scope="$props" name="footer-extra" />
+                        <div
+                            v-if="!hideFooter"
+                            class="modal-footer"
+                        >
+                            <slot
+                                :slot-scope="$props"
+                                name="footer-extra"
+                            />
                             <p-button
                                 v-if="footerResetButtonVisible"
                                 class="modal-button reset-button"
@@ -43,17 +71,24 @@
                                 :disabled="loading"
                                 @click="onResetClick"
                             >
-                                <slot :slot-scope="$props" name="reset-button">
+                                <slot
+                                    :slot-scope="$props"
+                                    name="reset-button"
+                                >
                                     Reset
                                 </slot>
                             </p-button>
-                            <p-button v-if="!hideFooterCloseButton"
-                                      class="modal-button cancel-button"
-                                      style-type="transparent"
-                                      :disabled="loading"
-                                      @click="onCancelClick"
+                            <p-button
+                                v-if="!hideFooterCloseButton"
+                                class="modal-button cancel-button"
+                                style-type="transparent"
+                                :disabled="loading"
+                                @click="onCancelClick"
                             >
-                                <slot name="close-button" v-bind="$props">
+                                <slot
+                                    name="close-button"
+                                    v-bind="$props"
+                                >
                                     {{ $t('COMPONENT.BUTTON_MODAL.CANCEL') }}
                                 </slot>
                             </p-button>
@@ -65,7 +100,10 @@
                                 :disabled="disabled"
                                 @click="onConfirmClick"
                             >
-                                <slot name="confirm-button" v-bind="$props">
+                                <slot
+                                    name="confirm-button"
+                                    v-bind="$props"
+                                >
                                     {{ $t('COMPONENT.BUTTON_MODAL.CONFIRM') }}
                                 </slot>
                             </p-button>
@@ -80,7 +118,7 @@
 <script lang="ts">
 import {
     computed, defineComponent, reactive, toRefs,
-} from '@vue/composition-api';
+} from 'vue';
 
 import type { ButtonModalProps } from '@/feedbacks/modals/button-modal/type';
 import { THEME_COLORS } from '@/feedbacks/modals/button-modal/type';
