@@ -56,7 +56,7 @@ export default defineComponent({
             nonKeepAliveTabNames,
             currentTabItem,
         } = useTab({
-            tabs: computed(() => props.tabs),
+            tabs: computed<Array<any>>(() => props.tabs),
             activeTab: computed(() => props.activeTab),
         });
 

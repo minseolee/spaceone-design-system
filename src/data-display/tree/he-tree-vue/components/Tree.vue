@@ -77,7 +77,7 @@ export default defineComponent({
             immediate: true,
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             handler(treeData) {
-                this._TreeDataHelper = new TreeData(this.treeData);
+                this._TreeDataHelper = new TreeData(this.treeData) as any;
             },
         },
     },

@@ -63,7 +63,7 @@ export default defineComponent({
     setup(props) {
         const state = reactive({
             component: computed(() => (props.link ? PAnchor : (props.tag || 'span'))),
-            displayItems: computed(() => props.items.reduce((res, item) => {
+            displayItems: computed(() => props.items.reduce((res: Array<any>, item: any) => {
                 let data;
                 if (typeof item === 'object' && props.subKey) {
                     data = get(item, props.subKey, '');

@@ -62,7 +62,7 @@
 </template>
 
 <script lang="ts">
-import type { WatchStopHandle } from 'vue';
+import type { PropType, WatchStopHandle } from 'vue';
 import {
     computed, defineComponent, onMounted, onUnmounted, reactive, toRefs, watch,
 } from 'vue';
@@ -94,7 +94,7 @@ import type {
     OperatorType,
     ValueHandler,
     ValueItem,
-    ValueMenuItem, MenuType, QueryItem, KeyDataType,
+    ValueMenuItem, MenuType, QueryItem, KeyDataType, KeyItemSet,
 } from '@/inputs/search/query-search/type';
 import {
     operators, OPERATOR,
@@ -134,7 +134,7 @@ export default defineComponent({
             default: false,
         },
         keyItemSets: {
-            type: Array,
+            type: Array as PropType<Array<KeyItemSet>>,
             default: () => [],
         },
         valueHandlerMap: {
