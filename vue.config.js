@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires,import/order
+const vueLoader = require('vue-loader');
+
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const webpackBundleAnalyzer = require('webpack-bundle-analyzer');
 
@@ -80,6 +83,7 @@ module.exports = {
                     loader: 'vue-loader',
                     options: {
                         esModule: false,
+                        compiler: vueLoader,
                     },
                 },
             ],
